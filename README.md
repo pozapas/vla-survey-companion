@@ -17,7 +17,7 @@
 
 Companion data for the survey &nbsp;<strong>Vision-Language-Action Models: Foundations, Architectures, Data, Efficiency, and Open Challenges</strong>&nbsp; (<em>under review</em>)
 
-**38 systems placed · 113 verified references · 1,161 benchmark results · 75 latency records · 2,053 table-cell excerpts**
+**38 systems placed · 125 verified references · 1,161 benchmark results · 75 latency records · 2,053 table-cell excerpts**
 
 [🗺️ Axes](#️-four-axes-and-their-decision-rules) • [🤖 Systems](#-the-38-placed-systems) • [📂 Data](#-data-files) • [🔁 Rebuild](#-rebuilding-the-table) • [🤝 Contribute](CONTRIBUTING.md) • [📜 License](#-license)
 
@@ -131,7 +131,7 @@ A system enters the table only when its own paper states the backbone, the actio
 
 ## 📂 Data files
 
-All files are UTF-8 CSV. The `source_page` and `location` columns point to the section, table, figure, or page of the source paper, and the `key` columns hold the survey's citation keys. Most of these keys, though not all, have a matched publisher, proceedings, or arXiv record in `refs_verified.csv`.
+All files are UTF-8 CSV. The `source_page` and `location` columns point to the section, table, figure, or page of the source paper, and the `key` columns hold the survey's citation keys. Each of these keys has a matched publisher, proceedings, or arXiv record in `refs_verified.csv`, except two retired keys marked `_UNUSED` in `claims_tables.csv`.
 
 | File | Rows | Contents |
 | --- | ---: | --- |
@@ -144,7 +144,7 @@ All files are UTF-8 CSV. The `source_page` and `location` columns point to the s
 | [`datasets.csv`](data/datasets.csv) | 14 | Robot datasets with source, scale, modalities, embodiments, and control rate |
 | [`positioning_evidence.csv`](data/positioning_evidence.csv) | 80 | The coding of the closest earlier surveys on each comparison criterion, with the quote, its location, and the second coder's check |
 | [`search_log.csv`](data/search_log.csv) | 24 | Query strings, fields, filters, run dates, and record counts of the literature search |
-| [`refs_verified.csv`](data/refs_verified.csv) | 113 | Each cited reference matched against its publisher, proceedings, or arXiv record |
+| [`refs_verified.csv`](data/refs_verified.csv) | 125 | Each cited reference matched against its publisher, proceedings, or arXiv record |
 | [`claims.csv`](data/claims.csv) | 387 | Sentence-level claims in the survey text, each with a source excerpt, its location, and whether the source supports it |
 | [`claims_tables.csv`](data/claims_tables.csv) | 2,053 | One excerpt and location for each table cell and plotted value |
 
