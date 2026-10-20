@@ -1,0 +1,176 @@
+system,evaluated_by,split,step1,step2,step3,step4,step5,avg_len,source_page
+HULC,quoted by yue2024deervla,D->D,82.7%,64.9%,50.4%,38.5%,28.3%,2.64,yue2024deervla: Table 9
+SPIL,quoted by yue2024deervla,D->D,84.6%,65.1%,50.8%,38.0%,28.6%,2.67,yue2024deervla: Table 9
+RoboFlamingo,quoted by yue2024deervla,D->D,83.9%,64.3%,42.9%,35.7%,19.6%,2.46 (31.2),yue2024deervla: Table 9
+RoboFlamingo++,yue2024deervla,D->D,87.1%,69.6%,49.6%,37.1%,27.2%,2.71 (31.2),yue2024deervla: Table 9
+DeeR,yue2024deervla,D->D,85.3%,69.6%,54.9%,42.0%,31.2%,2.83 (8.6),yue2024deervla: Table 9
+DeeR w. online,yue2024deervla,D->D,89.7%,70.5%,51.8%,44.2%,35.3%,2.92 (8.5),yue2024deervla: Table 9
+GR-1,quoted by yue2024deervla,ABCD->D,94.9%,89.6%,84.4%,78.9%,73.10%,4.21,yue2024deervla: Table 10
+HULC,quoted by yue2024deervla,ABCD->D,88.9%,73.3%,58.7%,47.5%,38.3%,3.06,yue2024deervla: Table 10
+RT-1,quoted by yue2024deervla,ABCD->D,84.4%,61.7%,43.8%,32.3%,22.7%,2.45,yue2024deervla: Table 10
+RoboFlamingo,quoted by yue2024deervla,ABCD->D,96.4%,89.6%,82.4%,74.0%,66.0%,4.08 (31.2),yue2024deervla: Table 10
+RoboFlamingo++,yue2024deervla,ABCD->D,98.2%,87.5%,81.8%,73.2%,65.5%,4.07 (31.2),yue2024deervla: Table 10
+DeeR,yue2024deervla,ABCD->D,98.2%,90.2%,82.1%,75.9%,67.0%,4.13 (10.0),yue2024deervla: Table 10
+DeeR w. online,yue2024deervla,ABCD->D,99.1%,93.3%,82.1%,74.6%,63.8%,4.13 (9.7),yue2024deervla: Table 10
+GR-1,quoted by yue2024deervla,ABC->D,85.4%,71.2%,59.6%,49.7%,40.1%,3.06,yue2024deervla: Table 11
+HULC,quoted by yue2024deervla,ABC->D,41.8%,16.5%,5.7%,1.9%,1.1%,0.67,yue2024deervla: Table 11
+RT-1,quoted by yue2024deervla,ABC->D,53.3%,22.2%,9.4%,3.8%,1.3%,0.9,yue2024deervla: Table 11
+SPIL,quoted by yue2024deervla,ABC->D,74.2%,46.3%,27.6%,14.7%,8.0%,1.71,yue2024deervla: Table 11
+SuSIE,quoted by yue2024deervla,ABC->D,87.0%,69.0%,49.0%,38.0%,26.0%,2.69,yue2024deervla: Table 11
+RoboFlamingo,quoted by yue2024deervla,ABC->D,82.4%,61.9%,46.6%,33.1%,23.5%,2.47 (31.2),yue2024deervla: Table 11
+RoboFlamingo++,yue2024deervla,ABC->D,85.9%,67.4%,48.7%,31.7%,25.0%,2.59 (31.2),yue2024deervla: Table 11
+DeeR,yue2024deervla,ABC->D,86.2%,70.1%,51.8%,41.5%,30.4%,2.82 (12.5),yue2024deervla: Table 11
+DeeR w. online,yue2024deervla,ABC->D,84.8%,72.3%,54.9%,44.6%,33.5%,2.90 (9.5),yue2024deervla: Table 11
+GR-2,cheang2024gr2,ABCD->D,98.6,,,,85.9,4.64,cheang2024gr2: Sec. 3.3 (Fig. 10 is an image; steps 2-4 not in text)
+GR-1,reported in cheang2024gr2 (provenance not stated),ABCD->D,94.9,,,,73.1,4.21,cheang2024gr2: Sec. 3.3 (Fig. 10 is an image; steps 2-4 not in text)
+MCIL,quoted by li2023roboflamingo,ABCD->D,0.373,0.027,0.002,0.000,0.000,0.40,li2023roboflamingo: Table 1
+HULC,reported in li2023roboflamingo (provenance not stated),ABCD->D,0.889,0.733,0.587,0.475,0.383,3.06,li2023roboflamingo: Table 1
+HULC,reported in li2023roboflamingo (provenance not stated),ABCD->D,0.892,0.701,0.548,0.420,0.335,2.90,li2023roboflamingo: Table 1
+RT-1,li2023roboflamingo,ABCD->D,0.844,0.617,0.438,0.323,0.227,2.45,li2023roboflamingo: Table 1
+RoboFlamingo (M-3B-IFT),li2023roboflamingo,ABCD->D,0.964,0.896,0.824,0.740,0.66,4.09,li2023roboflamingo: Table 1
+MCIL,quoted by li2023roboflamingo,ABC->D,0.304,0.013,0.002,0.000,0.000,0.31,li2023roboflamingo: Table 1
+HULC,reported in li2023roboflamingo (provenance not stated),ABC->D,0.418,0.165,0.057,0.019,0.011,0.67,li2023roboflamingo: Table 1
+RT-1,li2023roboflamingo,ABC->D,0.533,0.222,0.094,0.038,0.013,0.90,li2023roboflamingo: Table 1
+RoboFlamingo (M-3B-IFT),li2023roboflamingo,ABC->D,0.824,0.619,0.466,0.331,0.235,2.48,li2023roboflamingo: Table 1
+HULC,li2023roboflamingo,ABCD->D (GPT-4 enriched instructions),0.715,0.470,0.308,0.199,0.130,1.82,li2023roboflamingo: Table 1
+RT-1,li2023roboflamingo,ABCD->D (GPT-4 enriched instructions),0.494,0.222,0.086,0.036,0.017,0.86,li2023roboflamingo: Table 1
+RoboFlamingo,li2023roboflamingo,ABCD->D (GPT-4 enriched instructions),0.720,0.480,0.299,0.211,0.144,1.85,li2023roboflamingo: Table 1
+RoboFlamingo (freeze-emb),li2023roboflamingo,ABCD->D (GPT-4 enriched instructions),0.737,0.530,0.385,0.275,0.192,2.12,li2023roboflamingo: Table 1
+RoboFlamingo M-3B (10% language data),li2023roboflamingo,ABCD->D,0.047,0.003,0.000,0.000,0.000,0.05,li2023roboflamingo: Table 3
+RoboFlamingo M-3B-IFT (10% language data),li2023roboflamingo,ABCD->D,0.120,0.007,0.000,0.000,0.000,0.13,li2023roboflamingo: Table 3
+RoboFlamingo G-4B (10% language data),li2023roboflamingo,ABCD->D,0.420,0.054,0.003,0.000,0.000,0.48,li2023roboflamingo: Table 3
+RoboFlamingo G-4B-IFT (10% language data),li2023roboflamingo,ABCD->D,0.448,0.084,0.014,0.003,0.001,0.55,li2023roboflamingo: Table 3
+RoboFlamingo M-9B (10% language data),li2023roboflamingo,ABCD->D,0.547,0.190,0.067,0.020,0.003,0.83,li2023roboflamingo: Table 3
+RoboFlamingo M-3B-IFT co-trained with COCO/VQA,li2023roboflamingo,ABC->D,0.829,0.636,0.453,0.321,0.234,2.47,li2023roboflamingo: Table 5 (App. B.1)
+RoboFlamingo M-3B-IFT fine-tune,li2023roboflamingo,ABC->D,0.824,0.619,0.466,0.331,0.235,2.48,li2023roboflamingo: Table 5 (App. B.1)
+RoboFlamingo M-3B-IFT co-trained with COCO/VQA,li2023roboflamingo,ABCD->D,0.957,0.858,0.737,0.645,0.561,3.76,li2023roboflamingo: Table 5 (App. B.1)
+RoboFlamingo M-3B-IFT fine-tune,li2023roboflamingo,ABCD->D,0.964,0.896,0.824,0.740,0.66,4.09,li2023roboflamingo: Table 5 (App. B.1)
+RoboFlamingo M-3B-IFT co-trained with COCO/VQA,li2023roboflamingo,ABCD->D (GPT-4 enriched instructions),0.678,0.452,0.294,0.189,0.117,1.73,li2023roboflamingo: Table 5 (App. B.1)
+RoboFlamingo M-3B-IFT fine-tune,li2023roboflamingo,ABCD->D (GPT-4 enriched instructions),0.720,0.480,0.299,0.211,0.144,1.85,li2023roboflamingo: Table 5 (App. B.1)
+Voltron (Frozen),li2023roboflamingo,ABC->D,0.026,0.001,0.000,0.000,0.000,0.03,li2023roboflamingo: Table 7 (App. B.2)
+Voltron (Fine-tuned),li2023roboflamingo,ABC->D,0.569,0.272,0.105,0.038,0.014,1.00,li2023roboflamingo: Table 7 (App. B.2)
+RoboFlamingo (Ours),li2023roboflamingo,ABC->D,0.824,0.619,0.466,0.331,0.235,2.48,li2023roboflamingo: Table 7 (App. B.2)
+R3M (Frozen),li2023roboflamingo,ABCD->D,0.085,0.005,0.001,0.000,0.000,0.10,li2023roboflamingo: Table 7 (App. B.2)
+Voltron (Frozen),li2023roboflamingo,ABCD->D,0.101,0.003,0.001,0.000,0.000,0.11,li2023roboflamingo: Table 7 (App. B.2)
+Voltron (Fine-tuned),li2023roboflamingo,ABCD->D,0.837,0.566,0.352,0.208,0.115,2.08,li2023roboflamingo: Table 7 (App. B.2)
+RoboFlamingo (Ours),li2023roboflamingo,ABCD->D,0.964,0.896,0.824,0.740,0.662,4.09,li2023roboflamingo: Table 7 (App. B.2)
+Full model fine-tuned,li2023roboflamingo,ABCD->D,0.415,0.070,0.009,0.002,0.001,0.50,li2023roboflamingo: Table 8 (App. B.3)
+RoboFlamingo (1B trainable),li2023roboflamingo,ABCD->D,0.964,0.896,0.824,0.740,0.66,4.09,li2023roboflamingo: Table 8 (App. B.3)
+MCIL,reported in li_what_2026 (provenance not stated),ABCD->D,0.373,0.027,0.002,0.000,0.000,0.40,li_what_2026: Extended Table 2
+R3M (Frozen),reported in li_what_2026 (provenance not stated),ABCD->D,0.085,0.005,0.001,0.000,0.000,0.10,li_what_2026: Extended Table 2
+Voltron (Frozen),reported in li_what_2026 (provenance not stated),ABCD->D,0.101,0.003,0.001,0.000,0.000,0.11,li_what_2026: Extended Table 2
+Voltron (Fine-tuned),reported in li_what_2026 (provenance not stated),ABCD->D,0.837,0.566,0.352,0.208,0.115,2.08,li_what_2026: Extended Table 2
+RT-1,reported in li_what_2026 (provenance not stated),ABCD->D,0.844,0.617,0.438,0.323,0.227,2.45,li_what_2026: Extended Table 2
+HULC,reported in li_what_2026 (provenance not stated),ABCD->D,0.889,0.733,0.587,0.475,0.383,3.06,li_what_2026: Extended Table 2
+GR-1,reported in li_what_2026 (provenance not stated),ABCD->D,0.949,0.896,0.844,0.789,0.731,4.21,li_what_2026: Extended Table 2
+KosMos P.H. (RoboVLMs),li_what_2026,ABCD->D,0.967,0.930,0.899,0.865,0.826,4.49,li_what_2026: Extended Table 2
+MCIL,reported in li_what_2026 (provenance not stated),ABC->D,0.304,0.013,0.002,0.000,0.000,0.31,li_what_2026: Extended Table 2
+Voltron (Frozen),reported in li_what_2026 (provenance not stated),ABC->D,0.026,0.001,0.000,0.000,0.000,0.03,li_what_2026: Extended Table 2
+Voltron (Fine-tuned),reported in li_what_2026 (provenance not stated),ABC->D,0.569,0.272,0.105,0.038,0.014,1.00,li_what_2026: Extended Table 2
+RT-1,reported in li_what_2026 (provenance not stated),ABC->D,0.533,0.222,0.094,0.038,0.013,0.90,li_what_2026: Extended Table 2
+HULC,reported in li_what_2026 (provenance not stated),ABC->D,0.418,0.165,0.057,0.019,0.011,0.67,li_what_2026: Extended Table 2
+GR-1,reported in li_what_2026 (provenance not stated),ABC->D,0.854,0.712,0.596,0.497,0.401,3.06,li_what_2026: Extended Table 2
+KosMos P.H. (RoboVLMs),li_what_2026,ABC->D,0.980,0.936,0.854,0.778,0.704,4.25,li_what_2026: Extended Table 2
+LLaVA One-Step Disc.,li_what_2026,ABCD->D,0.809,0.484,0.278,0.175,0.103,1.85,li_what_2026: Table I
+LLaVA One-Step Cont.,li_what_2026,ABCD->D,0.793,0.592,0.420,0.329,0.235,2.37,li_what_2026: Table I
+LLaVA Interleaved Cont.,li_what_2026,ABCD->D,0.892,0.645,0.436,0.282,0.181,2.44,li_what_2026: Table I
+LLaVA Policy-Head Cont.,li_what_2026,ABCD->D,0.873,0.678,0.506,0.376,0.275,2.71,li_what_2026: Table I
+Flamingo One-Step Disc.,li_what_2026,ABCD->D,0.681,0.318,0.133,0.062,0.029,1.22,li_what_2026: Table I
+Flamingo One-Step Cont.,li_what_2026,ABCD->D,0.681,0.354,0.158,0.076,0.035,1.30,li_what_2026: Table I
+Flamingo Policy-Head Cont.,li_what_2026,ABCD->D,0.964,0.896,0.824,0.740,0.662,4.09,li_what_2026: Table I
+KosMos One-Step Disc.,li_what_2026,ABCD->D,0.424,0.097,0.023,0.005,0.002,0.55,li_what_2026: Table I
+KosMos One-Step Cont.,li_what_2026,ABCD->D,0.935,0.868,0.814,0.768,0.702,4.09,li_what_2026: Table I
+KosMos Interleaved Cont.,li_what_2026,ABCD->D,0.987,0.915,0.824,0.737,0.660,4.12,li_what_2026: Table I
+KosMos Policy-Head Cont.,li_what_2026,ABCD->D,0.967,0.930,0.899,0.865,0.826,4.49,li_what_2026: Table I
+PaliGemma One-Step Disc.,li_what_2026,ABCD->D,0.316,0.096,0.021,0.005,0.001,0.44,li_what_2026: Table I
+PaliGemma One-Step Cont.,li_what_2026,ABCD->D,0.933,0.863,0.808,0.751,0.688,4.04,li_what_2026: Table I
+PaliGemma Interleaved Cont.,li_what_2026,ABCD->D,0.949,0.896,0.851,0.803,0.754,4.25,li_what_2026: Table I
+PaliGemma Policy-Head Cont.,li_what_2026,ABCD->D,0.984,0.933,0.888,0.835,0.779,4.42,li_what_2026: Table I
+"PaliGemma one-step-continuous, Flow Matching, execute Chunk",li_what_2026,ABC->D,0.910,0.812,0.730,0.652,0.573,3.68,li_what_2026: Table II(a)
+"PaliGemma one-step-continuous, Flow Matching, execute First",li_what_2026,ABC->D,0.793,0.586,0.442,0.351,0.273,2.45,li_what_2026: Table II(a)
+"PaliGemma one-step-continuous, Flow Matching, execute Ensemble",li_what_2026,ABC->D,0.838,0.710,0.614,0.545,0.437,3.14,li_what_2026: Table II(a)
+"PaliGemma one-step-continuous, MSE+BCE, execute Chunk",li_what_2026,ABC->D,0.901,0.802,0.703,0.620,0.544,3.57,li_what_2026: Table II(a)
+"PaliGemma one-step-continuous, MSE+BCE, execute First",li_what_2026,ABC->D,0.822,0.564,0.371,0.265,0.169,2.19,li_what_2026: Table II(a)
+"PaliGemma one-step-continuous, MSE+BCE, execute Ensemble",li_what_2026,ABC->D,0.880,0.730,0.606,0.508,0.414,3.14,li_what_2026: Table II(a)
+"PaliGemma one-step-continuous, Flow Matching, execute Chunk",li_what_2026,ABCD->D,0.937,0.872,0.811,0.764,0.705,4.09,li_what_2026: Table II(a)
+"PaliGemma one-step-continuous, Flow Matching, execute First",li_what_2026,ABCD->D,0.898,0.799,0.701,0.618,0.544,3.56,li_what_2026: Table II(a)
+"PaliGemma one-step-continuous, Flow Matching, execute Ensemble",li_what_2026,ABCD->D,0.945,0.882,0.818,0.770,0.708,4.12,li_what_2026: Table II(a)
+"PaliGemma one-step-continuous, MSE+BCE, execute Chunk",li_what_2026,ABCD->D,0.933,0.863,0.808,0.751,0.688,4.04,li_what_2026: Table II(a)
+"PaliGemma one-step-continuous, MSE+BCE, execute First",li_what_2026,ABCD->D,0.925,0.727,0.579,0.473,0.378,3.06,li_what_2026: Table II(a)
+"PaliGemma one-step-continuous, MSE+BCE, execute Ensemble",li_what_2026,ABCD->D,0.925,0.849,0.784,0.721,0.664,3.94,li_what_2026: Table II(a)
+"PaliGemma one-step-continuous, MSE+BCE, MoE yes",li_what_2026,ABC->D,0.932,0.824,0.732,0.644,0.556,3.69,li_what_2026: Table II(b)
+"PaliGemma one-step-continuous, MSE+BCE, MoE no",li_what_2026,ABC->D,0.901,0.802,0.703,0.620,0.544,3.57,li_what_2026: Table II(b)
+"PaliGemma one-step-continuous, Flow Matching, MoE yes",li_what_2026,ABC->D,0.940,0.855,0.768,0.679,0.597,3.84,li_what_2026: Table II(b)
+"PaliGemma one-step-continuous, Flow Matching, MoE no",li_what_2026,ABC->D,0.910,0.812,0.730,0.652,0.573,3.68,li_what_2026: Table II(b)
+"PaliGemma one-step-continuous, MSE+BCE, MoE yes",li_what_2026,ABCD->D,0.945,0.823,0.678,0.561,0.457,3.46,li_what_2026: Table II(b)
+"PaliGemma one-step-continuous, MSE+BCE, MoE no",li_what_2026,ABCD->D,0.933,0.863,0.808,0.751,0.688,4.04,li_what_2026: Table II(b)
+"PaliGemma one-step-continuous, Flow Matching, MoE yes",li_what_2026,ABCD->D,0.911,0.828,0.759,0.707,0.639,3.84,li_what_2026: Table II(b)
+"PaliGemma one-step-continuous, Flow Matching, MoE no",li_what_2026,ABCD->D,0.937,0.872,0.811,0.764,0.705,4.10,li_what_2026: Table II(b)
+Flamingo P.H. 3B (0.1x data),li_what_2026,ABCD->D,0.120,0.007,0.000,0.000,0.000,0.13,li_what_2026: Extended Table 4
+Flamingo P.H. 4B (0.1x data),li_what_2026,ABCD->D,0.448,0.084,0.014,0.003,0.001,0.55,li_what_2026: Extended Table 4
+Flamingo P.H. 9B (0.1x data),li_what_2026,ABCD->D,0.547,0.190,0.067,0.020,0.003,0.83,li_what_2026: Extended Table 4
+KosMos Inter. (0.1x data),li_what_2026,ABCD->D,0.938,0.701,0.445,0.270,0.140,2.49,li_what_2026: Extended Table 4
+KosMos P.H. (0.1x data),li_what_2026,ABCD->D,0.958,0.684,0.431,0.270,0.176,2.52,li_what_2026: Extended Table 4
+Flamingo P.H. 3B (1x data),li_what_2026,ABCD->D,0.964,0.896,0.824,0.740,0.662,4.09,li_what_2026: Extended Table 4
+Flamingo P.H. 4B (1x data),li_what_2026,ABCD->D,0.936,0.847,0.750,0.667,0.586,3.79,li_what_2026: Extended Table 4
+Flamingo P.H. 9B (1x data),li_what_2026,ABCD->D,0.955,0.879,0.784,0.714,0.634,3.97,li_what_2026: Extended Table 4
+KosMos Inter. (1x data),li_what_2026,ABCD->D,0.987,0.915,0.824,0.737,0.660,4.12,li_what_2026: Extended Table 4
+KosMos P.H. (1x data),li_what_2026,ABCD->D,0.967,0.930,0.899,0.865,0.826,4.49,li_what_2026: Extended Table 4
+Flamingo P.H. 3B (5x data),li_what_2026,ABCD->D,0.971,0.916,0.856,0.794,0.716,4.21,li_what_2026: Extended Table 4
+KosMos Inter. (5x data),li_what_2026,ABCD->D,0.989,0.940,0.892,0.842,0.795,4.46,li_what_2026: Extended Table 4
+KosMos P.H. (5x data),li_what_2026,ABCD->D,0.968,0.937,0.903,0.872,0.830,4.51,li_what_2026: Extended Table 4
+"Flamingo 3B P.H. (#tokens 64, VL data 1B+)",li_what_2026,ABCD->D,0.692,0.418,0.241,0.14,0.074,1.57,li_what_2026: Extended Table 5
+"Flamingo 4B P.H. (#tokens 64, VL data 1B+)",li_what_2026,ABCD->D,0.689,0.456,0.281,0.181,0.107,1.71,li_what_2026: Extended Table 5
+"Flamingo 9B P.H. (#tokens 64, VL data 1B+)",li_what_2026,ABCD->D,0.744,0.485,0.298,0.187,0.112,1.83,li_what_2026: Extended Table 5
+"Qwen-VL 9B P.H. (#tokens 256, VL data 350K)",li_what_2026,ABCD->D,0.221,0.062,0.014,0.002,0.000,0.30,li_what_2026: Extended Table 5
+"MoonDream 3B P.H. (#tokens 576, VL data UNK)",li_what_2026,ABCD->D,0.717,0.473,0.296,0.198,0.127,1.81,li_what_2026: Extended Table 5
+"Uform 1.3B P.H. (#tokens 256, VL data 10M)",li_what_2026,ABCD->D,0.778,0.577,0.407,0.300,0.216,2.28,li_what_2026: Extended Table 5
+"KosMos 2B P.H. (#tokens 64, VL data 90M)",li_what_2026,ABCD->D,0.922,0.807,0.701,0.615,0.549,3.59,li_what_2026: Extended Table 5
+"Paligemma 3B P.H. (#tokens 256, VL data 10B)",li_what_2026,ABCD->D,0.931,0.836,0.752,0.683,0.616,3.82,li_what_2026: Extended Table 5
+KosMos Inter. No VL,li_what_2026,ABCD->D,0.692,0.382,0189,0.085,0.036,1.38,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+KosMos Inter.,li_what_2026,ABCD->D,0.987,0.915,0.824,0.737,0.660,4.12,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+KosMos P.H. No VL,li_what_2026,ABCD->D,0.815,0.626,0.473,0.349,0.245,2.51,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+KosMos P.H.,li_what_2026,ABCD->D,0.967,0.930,0.899,0.865,0.826,4.49,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+Flamingo P.H. 9B No VL,li_what_2026,ABCD->D,0.733,0.444,0.270,0.161,0.077,1.69,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+Flamingo P.H. 9B,li_what_2026,ABCD->D,0.955,0.879,0.784,0.714,0.634,3.97,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+KosMos Inter. No VL,li_what_2026,"ABCD->D (5x data, 1 epoch)",0.833,0.588,0.421,0.297,0.209,2.35,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+KosMos Inter.,li_what_2026,"ABCD->D (5x data, 1 epoch)",0.989,0.940,0.892,0.842,0.795,4.46,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+KosMos P.H. No VL,li_what_2026,"ABCD->D (5x data, 1 epoch)",0.893,0.755,0.644,0.564,0.462,3.32,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+KosMos P.H.,li_what_2026,"ABCD->D (5x data, 1 epoch)",0.968,0.937,0.903,0.872,0.830,4.51,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+KosMos Inter. No VL,li_what_2026,ABC->D,0.432,0.162,0.044,0.007,0.002,0.65,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+KosMos Inter.,li_what_2026,ABC->D,0.824,0.684,0.524,0.376,0.296,2.70,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+KosMos P.H. No VL,li_what_2026,ABC->D,0.389,0.121,0.038,0.008,0.001,0.56,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+KosMos P.H.,li_what_2026,ABC->D,0.980,0.936,0.854,0.778,0.704,4.25,"li_what_2026: Appendix D, Extended Table 2 (VL pre-training)"
+RT-1,reported in bu2025univlalearningacttaskcentric (provenance not stated),ABC->D,53.3,22.2,9.4,3.8,1.3,0.90,bu2025univlalearningacttaskcentric: Table A-II
+RoboFlamingo,reported in bu2025univlalearningacttaskcentric (provenance not stated),ABC->D,82.4,61.9,46.6,33.1,23.5,2.48,bu2025univlalearningacttaskcentric: Table A-II
+SuSIE,reported in bu2025univlalearningacttaskcentric (provenance not stated),ABC->D,87.0,69.0,49.0,38.0,26.0,2.69,bu2025univlalearningacttaskcentric: Table A-II
+GR-1,reported in bu2025univlalearningacttaskcentric (provenance not stated),ABC->D,85.4,71.2,59.6,49.7,40.1,3.06,bu2025univlalearningacttaskcentric: Table A-II
+OpenVLA (reproduced with action chunks),bu2025univlalearningacttaskcentric,ABC->D,91.3,77.8,62.0,52.1,43.5,3.27,bu2025univlalearningacttaskcentric: Table A-II
+CLOVER,reported in bu2025univlalearningacttaskcentric (provenance not stated),ABC->D,96.0,83.5,70.8,57.5,45.4,3.53,bu2025univlalearningacttaskcentric: Table A-II
+RoboDual,reported in bu2025univlalearningacttaskcentric (provenance not stated),ABC->D,94.4,82.7,72.1,62.4,54.4,3.66,bu2025univlalearningacttaskcentric: Table A-II
+UniVLA,bu2025univlalearningacttaskcentric,ABC->D,95.5,85.8,75.4,66.9,56.5,3.80,bu2025univlalearningacttaskcentric: Table A-II
+UniVLA,quoted by wang2026vlaadapter,ABC->D,95.5,85.8,75.4,66.9,56.5,3.80,wang2026vlaadapter: Table 6
+OpenVLA,quoted by wang2026vlaadapter,ABC->D,91.3,77.8,62.0,52.1,43.5,3.27,wang2026vlaadapter: Table 6
+OpenVLA-OFT,reported in wang2026vlaadapter (provenance not stated),ABC->D,96.3,89.1,82.4,75.8,66.5,4.10,wang2026vlaadapter: Table 6
+VLAS,quoted by wang2026vlaadapter,ABC->D,87.2,64.2,40.9,28.1,19.6,2.40,wang2026vlaadapter: Table 6
+LCB,quoted by wang2026vlaadapter,ABC->D,73.6,50.2,28.5,16.0,9.9,1.78,wang2026vlaadapter: Table 6
+RoboDual,quoted by wang2026vlaadapter,ABC->D,94.4,82.7,72.1,62.4,54.4,3.66,wang2026vlaadapter: Table 6
+OpenHelix,quoted by wang2026vlaadapter,ABC->D,97.1,91.4,82.8,72.6,64.1,4.08,wang2026vlaadapter: Table 6
+ReconVLA,quoted by wang2026vlaadapter,ABC->D,95.6,87.6,76.9,69.3,64.1,3.95,wang2026vlaadapter: Table 6
+DeeR,quoted by wang2026vlaadapter,ABC->D,86.2,70.1,51.8,41.5,30.4,2.82,wang2026vlaadapter: Table 6
+RoboFlamingo,quoted by wang2026vlaadapter,ABC->D,82.4,61.9,46.6,33.1,23.5,2.48,wang2026vlaadapter: Table 6
+VPP,quoted by wang2026vlaadapter,ABC->D,95.7,91.2,86.3,81.0,75.0,4.33,wang2026vlaadapter: Table 6
+SuSIE,quoted by wang2026vlaadapter,ABC->D,87.0,69.0,49.0,38.0,26.0,2.69,wang2026vlaadapter: Table 6
+SeerLarge,quoted by wang2026vlaadapter,ABC->D,96.3,91.6,86.1,80.3,74.0,4.28,wang2026vlaadapter: Table 6
+MoDE,quoted by wang2026vlaadapter,ABC->D,96.2,88.9,81.1,71.8,63.5,4.01,wang2026vlaadapter: Table 6
+Seer,quoted by wang2026vlaadapter,ABC->D,94.4,87.2,79.9,72.2,64.3,3.98,wang2026vlaadapter: Table 6
+VLA-Adapter,wang2026vlaadapter,ABC->D,99.1,94.6,88.8,82.8,76.5,4.42,wang2026vlaadapter: Table 6
+VLA-Adapter-Pro,wang2026vlaadapter,ABC->D,98.5,95.0,90.5,85.3,80.0,4.50,wang2026vlaadapter: Table 6
+X-VLA-0.9B,zheng2026xvla,ABC->D,97.1,92.6,88.5,84.4,78.8,4.43,zheng2026xvla: Table 14
+"MoDE (Reuss et al., 2024) (0.4B)",reported in zheng2026xvla (provenance not stated),ABC->D,,,,,,4.01,zheng2026xvla: Table 2 (only average length given)
+"SuSIE (Black et al., 2024b) (1B)",reported in zheng2026xvla (provenance not stated),ABC->D,,,,,,2.69,zheng2026xvla: Table 2 (only average length given)
+"GHIL-Glue (Hatch et al., 2025) (1B)",reported in zheng2026xvla (provenance not stated),ABC->D,,,,,,3.69,zheng2026xvla: Table 2 (only average length given)
+"GR-1 (Wu et al., 2023) (0.2B)",reported in zheng2026xvla (provenance not stated),ABC->D,,,,,,3.06,zheng2026xvla: Table 2 (only average length given)
+"Seer (Tian et al., 2025) (0.3B)",reported in zheng2026xvla (provenance not stated),ABC->D,,,,,,4.28,zheng2026xvla: Table 2 (only average length given)
+"FLOWER (Reuss et al., 2025) (1B)",reported in zheng2026xvla (provenance not stated),ABC->D,,,,,,4.53,zheng2026xvla: Table 2 (only average length given)
+"UniVLA (Wang et al., 2025a) (9B)",reported in zheng2026xvla (provenance not stated),ABC->D,,,,,,4.41,zheng2026xvla: Table 2 (only average length given)

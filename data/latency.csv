@@ -1,0 +1,76 @@
+system,params,decoder_family,passes_per_chunk,chunk_length,rate_hz,ms_per_action,hardware,precision,source_page
+BitVLA,3.0B (1.4 GB memory),"parallel decoding, discretized action tokens (256 bins), causal mask",1,25,341.1,,NVIDIA A100,"1.58-bit (ternary) weights, INT8 activations",wang2025bitvla: Sec. IV-C; Sec. III-B
+OpenVLA-OFT+ (baseline from OpenVLA-OFT paper),7.7B,parallel decoding,,25,77.9,,NVIDIA A100 (as reported in [18]),,wang2025bitvla: Sec. IV-C
+pi0 (baseline from OpenVLA-OFT paper),3.5B,,,25,291.6,,NVIDIA A100 (as reported in [18]),,wang2025bitvla: Sec. IV-C
+"LLaVA-VLA, no chunking, AR",,autoregressive discrete tokens,,,2.23,,NVIDIA RTX 4090,,song2025ceedvla_UNUSED: Table 2
+"PD-VLA (LLaVA-VLA, as re-run in CEED-VLA)",,Jacobi parallel decoding of discrete tokens,,5,5.43,,NVIDIA RTX 4090,,song2025ceedvla_UNUSED: Table 2
+CEED-VLA (LLaVA-VLA),,"Jacobi parallel decoding of discrete tokens, consistency-distilled, early exit",up to 16 Jacobi iterations (exit point),5,7.27,,NVIDIA RTX 4090,,song2025ceedvla_UNUSED: Table 2; Sec. 5.2
+"OpenVLA, no chunking, AR",,autoregressive discrete tokens,,,5.95,,NVIDIA H100,,song2025ceedvla_UNUSED: Table 2
+"CEED-VLA (OpenVLA, chunk 3)",,"Jacobi parallel decoding of discrete tokens, consistency-distilled, early exit",,3,25.6,,NVIDIA H100,,song2025ceedvla_UNUSED: Table 2
+RoboFlamingo++,OpenFlamingo 3B (24 LLM layers),LSTM action head (regression),1,1,,55 ms (average LLM inference time only),Nvidia V100,,yue2024deervla: Table 5
+DeeR,"OpenFlamingo 3B (first 12 LLM layers, dynamic exit)","LSTM action head (regression), early-exit LLM",1,1,,"17.5 ms (average LLM inference time only, 6.0 GFLOPs, ABCD->D)",Nvidia V100,,yue2024deervla: Table 5
+DexVLA,Qwen2-VL 2B + 1B diffusion expert,diffusion transformer action expert,,,60,,single Nvidia A6000,,wen2025dexvla: Sec. 1
+CogACT-Small,7.55B,diffusion (DiT action module),10 denoising steps (cache interval 5 in EfficientVLA),,,215.6 ms per step (0.2156 s),NVIDIA A40,,yang2025efficientvla: Table 3; Sec. 4.1
+"EfficientVLA on CogACT-Small (L=22, T=56)",4.78B,diffusion (DiT action module),10 denoising steps (cache interval 5 in EfficientVLA),,,117.3 ms per step (0.1173 s),NVIDIA A40,,yang2025efficientvla: Table 3; Sec. 4.1
+CogACT (Base),7.63B,diffusion (DiT action module),10 denoising steps (cache interval 5 in EfficientVLA),,,234.2 ms per step (0.2342 s),NVIDIA A40,,yang2025efficientvla: Table 3; Sec. 4.1
+"EfficientVLA on CogACT-Base (L=22, T=56)",4.86B,diffusion (DiT action module),10 denoising steps (cache interval 5 in EfficientVLA),,,121.3 ms per step (0.1213 s),NVIDIA A40,,yang2025efficientvla: Table 3; Sec. 4.1
+CogACT-Large,7.85B,diffusion (DiT action module),10 denoising steps (cache interval 5 in EfficientVLA),,,262.8 ms per step (0.2628 s),NVIDIA A40,,yang2025efficientvla: Table 3; Sec. 4.1
+"EfficientVLA on CogACT-Large (L=22, T=56)",5.08B,diffusion (DiT action module),10 denoising steps (cache interval 5 in EfficientVLA),,,131.2 ms per step (0.1312 s),NVIDIA A40,,yang2025efficientvla: Table 3; Sec. 4.1
+pi0-FAST,2B LM backbone (PaliGemma-3B VLA),autoregressive tokens (FAST),30-60 token decoding steps,1 s of actions,,about 750 ms per chunk,NVIDIA RTX 4090,,pertsch2025fastefficientactiontokenization: Sec. VI-E
+pi0 (diffusion / flow matching),300M action expert on the VLM,flow matching (diffusion),10 diffusion steps,1 s of actions,,within 100 ms per chunk,NVIDIA RTX 4090,,pertsch2025fastefficientactiontokenization: Sec. VI-E
+GR00T-N1-2B,2.2B,flow-matching DiT action module (VLM + DiT),4 denoising steps,16,,63.9 ms per 16-action chunk,NVIDIA L40,bf16,"nvidia2025gr00tn1openfoundation: Sec. 2, Sec. 2.1"
+"Hi Robot low-level policy (pi0), on-board",3B (PaliGemma-3B base),flow matching action expert,,,~10 (50 with action chunking),"73 ms per step total (image encoding 14, observation processing 32, action prediction x10 27)",RTX 4090,,shi2025hirobot: App. B.3
+"Hi Robot low-level policy (pi0), off-board + WiFi",3B (PaliGemma-3B base),flow matching action expert,,,,86 ms per step total,RTX 4090,,shi2025hirobot: App. B.3
+Hi Robot high-level policy (single decoding step),3B (PaliGemma-3B base),autoregressive language decoding,,,,47 ms prefill + 13.2 ms per decode step,RTX 4090,,shi2025hirobot: App. B.3
+Hi Robot high-level policy (single decoding step),3B (PaliGemma-3B base),autoregressive language decoding,,,,17.3 ms prefill + 5.7 ms per decode step,H100,,shi2025hirobot: App. B.3
+LeVERB-VL (System 2),,CVAE latent (latent verb),,latent held 5 low-level steps,about 10,,"external desktop PC, NVIDIA RTX 4090",,xue2025leverb: App. F
+LeVERB-A (System 1),,Transformer whole-body controller (joint position actions),1,1,50,,"Unitree G1 onboard CPU, ONNX runtime, C++",,xue2025leverb: App. F
+OpenVLA,7B,autoregressive tokens,7,1,4.2,,NVIDIA A100 (LIBERO: one 224x224 image + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table II
+OpenVLA + PD,7B,"parallel decoding, discrete tokens",1,1,15.9,,NVIDIA A100 (LIBERO: one 224x224 image + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table II
+OpenVLA + PD&AC,7B,"parallel decoding, discrete tokens",1,8,108.8,,NVIDIA A100 (LIBERO: one 224x224 image + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table II
+"OpenVLA + PD&AC, Cont-L1 (OpenVLA-OFT, third-person only)",7B,"parallel decoding, L1 regression MLP head",1,8,109.7,,NVIDIA A100 (LIBERO: one 224x224 image + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table II
+"OpenVLA + PD&AC, Cont-Diffusion (T_test=50)",7B,diffusion (DDIM),50 denoising steps,8,4.2,,NVIDIA A100 (LIBERO: one 224x224 image + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table II
+"OpenVLA + PD&AC, Cont-Diffusion (T_test=10)",7B,diffusion (DDIM),10 denoising steps,8,19.3,,NVIDIA A100 (LIBERO: one 224x224 image + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table II
+"OpenVLA + PD&AC, Cont-Diffusion (T_test=5)",7B,diffusion (DDIM),5 denoising steps,8,35.1,,NVIDIA A100 (LIBERO: one 224x224 image + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table II
+"OpenVLA + PD&AC, Cont-Diffusion (T_test=2)",7B,diffusion (DDIM),2 denoising steps,8,80.3,,NVIDIA A100 (LIBERO: one 224x224 image + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table II
+"OpenVLA + PD&AC, Cont-Diffusion (T_test=1)",7B,diffusion (DDIM),1 denoising step,8,109.4,,NVIDIA A100 (LIBERO: one 224x224 image + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table II
+"OpenVLA-OFT + Additional Inputs (wrist img, proprio)",7B,"parallel decoding, L1 regression MLP head",1,8,71.4,,NVIDIA A100 (LIBERO: third-person + wrist image + proprio),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table II
+OpenVLA (ALOHA inputs),7.5B,autoregressive tokens,,1,1.8,,NVIDIA A100 (ALOHA: three 224x224 images + 14-D state + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table III
+OpenVLA-OFT+,7.5B,"parallel decoding, L1 regression MLP head, FiLM",1,25,77.9,,NVIDIA A100 (ALOHA: three 224x224 images + 14-D state + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table III
+RDT-1B,1.2B,diffusion,,25 executed of 64 predicted,84.1,,NVIDIA A100 (ALOHA: three 224x224 images + 14-D state + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table III
+Diffusion Policy,157M,diffusion,,24,267.4,,NVIDIA A100 (ALOHA: three 224x224 images + 14-D state + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table III
+\pi_{0} (JAX implementation),3.3B,flow matching,,25,291.6,,NVIDIA A100 (ALOHA: three 224x224 images + 14-D state + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table III
+ACT,84M,"L1 regression, single pass",1,25,432.8,,NVIDIA A100 (ALOHA: three 224x224 images + 14-D state + instruction),,kim2025finetuningvisionlanguageactionmodelsoptimizing: Table III
+"OpenVLA (single-timestep action, text statement)",7B,autoregressive tokens,7,1,,330,NVIDIA A100,,kim2025finetuningvisionlanguageactionmodelsoptimizing: Sec. III
+pi0 (baseline),,flow matching action expert (pi0),,,,0.082 s per inference call (acting; 20 input tokens),"NVIDIA 4090 GPU, two image inputs",,lin2025onetwovla_UNUSED: Table 14; App. F.3
+OneTwoVLA-Act-20,,flow matching action expert after 1 decision token [BOA],,,,"0.102 s per inference call (acting mode; 20 input tokens, 1 output token)","NVIDIA 4090 GPU, two image inputs",,lin2025onetwovla_UNUSED: Table 14; App. F.3
+OneTwoVLA-Act-200,,flow matching action expert after 1 decision token [BOA],,,,"0.104 s per inference call (acting mode; 200 input tokens, 1 output token)","NVIDIA 4090 GPU, two image inputs",,lin2025onetwovla_UNUSED: Table 14; App. F.3
+OneTwoVLA-Reason-20,,autoregressive reasoning text,,,,"0.853 s per inference call (reasoning mode; 200 input tokens, 20 output tokens)","NVIDIA 4090 GPU, two image inputs",,lin2025onetwovla_UNUSED: Table 14; App. F.3
+OneTwoVLA-Reason-100,,autoregressive reasoning text,,,,"2.346 s per inference call (reasoning mode; 200 input tokens, 100 output tokens)","NVIDIA 4090 GPU, two image inputs",,lin2025onetwovla_UNUSED: Table 14; App. F.3
+OneTwoVLA-Reason-200,,autoregressive reasoning text,,,,"4.361 s per inference call (reasoning mode; 200 input tokens, 200 output tokens)","NVIDIA 4090 GPU, two image inputs",,lin2025onetwovla_UNUSED: Table 14; App. F.3
+OpenDriveVLA-0.5B,0.5B,autoregressive tokens,,6 waypoints,,1.36 s per sample (0.74 samples/s),1x NVIDIA A100,bf16,zhang2025opendrivevla: Table IX
+OpenDriveVLA-3B,3B,autoregressive tokens,,6 waypoints,,1.85 s per sample (0.54 samples/s),1x NVIDIA A100,bf16,zhang2025opendrivevla: Table IX
+OpenDriveVLA-7B,7B,autoregressive tokens,,6 waypoints,,1.74 s per sample (0.57 samples/s),1x NVIDIA A100,bf16,zhang2025opendrivevla: Table IX
+OpenVLA,7B,autoregressive tokens,7,1,approximately 6,,NVIDIA RTX 4090,bfloat16,kim2024openvla: Sec. 3.5
+OpenVLA (8-bit; SigLIP-only variant used in Sec. 5.4),7B,autoregressive tokens,7,1,1.2,,NVIDIA A5000,int8,kim2024openvla: Sec. 5.4
+OpenVLA (4-bit; SigLIP-only variant used in Sec. 5.4),7B,autoregressive tokens,7,1,3,,NVIDIA A5000,int4,"kim2024openvla: Sec. 5.4, footnote 5"
+π₀,3.3B,flow matching (action expert),1 prefix pass + 10 action-expert passes,50,,,"NVIDIA GeForce RTX 4090, 3 camera images",,"black2024pi0: Appendix A-D, Table I"
+RDT-1B,1.2B,"diffusion (DiT, DPM-Solver++)",5,64,"6 (chunks/s); 381 (actions/s, average)",,RTX 4090 24GB (onboard),,liu2025rdt: Sec. 5.1
+RT-2-PaLI-X-55B,55B,autoregressive tokens,,1,1-3,,"multi-TPU cloud service, queried over the network",,brohan2023rt2: Sec. 3.3
+RT-2-PaLI-X-5B,5B,autoregressive tokens,,1,around 5,,"multi-TPU cloud service, queried over the network",,brohan2023rt2: Sec. 3.3
+SpatialVLA,3.5B,autoregressive tokens (adaptive spatial action grids),12 tokens per chunk,4,approximately 20,,"one NVIDIA RTX 4090, 8.5GB GPU memory",,qu2025spatialvla: Sec. IV Implementation Details
+TinyVLA-1B,1B (largest model; Table II lists TinyVLA-H as 1.3B),diffusion policy head,,,,14,single A6000 GPU,,wen2025tinyvla: Table IV
+OpenVLA-7B,7B,autoregressive tokens,,,,292,single A6000 GPU,,wen2025tinyvla: Table IV
+OpenVLA-1B (Prismatic-7B backbone replaced with TinyVLA's VLM),1B,autoregressive tokens,,,,140,single A6000 GPU,,"wen2025tinyvla: Table IV, Sec. V-C"
+UniVLA,7B,"latent action tokens (autoregressive, 4 tokens) + attention-pooling action head",4 latent tokens,12,10,,NVIDIA RTX 4090,,bu2025univlalearningacttaskcentric: Sec. IV-A3
+VLA-0,3B,autoregressive text (integer strings),,,4,,desktop with a 5090 GPU,,goyal2025vla0: Sec. IV-D
+OpenVLA,7B,autoregressive action tokens,,,4.2,,4 NVIDIA H100 GPUs (general statement for all experiments; inference device not separately specified),,wang2026vlaadapter: Table 4; Sec. 4
+OpenVLA-OFT (without gripper image and proprioceptive state),7B,OpenVLA-OFT L1-based version,,8 (caption: action chunk is 8),109.7,,4 NVIDIA H100 GPUs (general statement for all experiments; inference device not separately specified),,wang2026vlaadapter: Table 4; Sec. 4
+OpenVLA-OFT,7B,OpenVLA-OFT,,8 (caption: action chunk is 8),71.4,,4 NVIDIA H100 GPUs (general statement for all experiments; inference device not separately specified),,wang2026vlaadapter: Table 4; Sec. 4
+VLA-Adapter,0.5B backbone,L1-regression Policy with Bridge Attention,,8,219.2,,4 NVIDIA H100 GPUs (general statement for all experiments; inference device not separately specified),,wang2026vlaadapter: Table 4; Sec. 4
+OpenVLA,,,,,4.23,,single NVIDIA RTX 4090,BF16,xu2025vlacache: Table 2; App. E.1
+OpenVLA + VLA-Cache,,,,,4.59,,single NVIDIA RTX 4090,BF16,xu2025vlacache: Table 2; App. E.1
+OpenVLA-OFT,,action chunking (paper: a faster variant with action chunking),,,65.1,,NVIDIA RTX 4090,,xu2025vlacache: Table 2; Sec. 5
+OpenVLA-OFT + VLA-Cache,,action chunking (paper: a faster variant with action chunking),,,78.98,,NVIDIA RTX 4090,,xu2025vlacache: Table 2; Sec. 5
+CogACT (SIMPLER Visual Matching),,"diffusion action head (DDIM, 10 steps, CFG 1.5)",,,12.42,,single NVIDIA RTX 4090,BF16,xu2025vlacache: Table 3; App. E.1
+CogACT + VLA-Cache (SIMPLER Visual Matching),,"diffusion action head (DDIM, 10 steps, CFG 1.5)",,,14.66,,single NVIDIA RTX 4090,BF16,xu2025vlacache: Table 3; App. E.1

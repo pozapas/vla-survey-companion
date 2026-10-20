@@ -1,0 +1,15 @@
+key,name,data_source,scale,modalities,embodiments,control_rate_hz,main_use,source_page
+openxembodiment2024,Open X-Embodiment,real robot (aggregated),"1M+ trajectories; 60 pooled datasets from 34 labs; 21 institutions in the collaboration",,22 embodiments,,cross-embodiment pretraining,Sec. I; Sec. III
+khazatsky2025droidlargescaleinthewildrobot,DROID,real robot,"76k trajectories; 350 h; 564 scenes; 86 tasks",,,15,in-the-wild manipulation,Abstract; Sec. 3
+walke2023bridgedatav2,BridgeData V2,real robot,"60,096 trajectories (50,365 demonstrations); 24 environments; 13 skills",,WidowX 250,5,cross-domain generalization; SimplerEnv WidowX source,Abstract; Sec. 3
+mees2022calvinbenchmarklanguageconditionedpolicy,CALVIN,simulated benchmark,"~24 h teleoperated play in four environments; 34 tasks; 1000 instruction chains",,,,chained instruction following,Sec. III; Fig. 6; Fig. 7
+liu2023liberobenchmarkingknowledgetransfer,LIBERO,simulated benchmark,"four task suites; 130 tasks; human-teleoperated demonstrations for all tasks",,,,lifelong learning and transfer,Sec. 1; Sec. 4
+yang2025lohovla1,LoHoSet,simulated (Ravens),"20 long-horizon tasks; 1,000 demonstrations each",visual observations; sub-task language; actions,,,long-horizon sub-task decomposition,Sec. 3.2
+shukor2025smolvla,Community (SmolVLA mixture),community low-cost platforms,"481 datasets; 22.9K episodes; 10.6M frames",,,,affordable pretraining,Sec. 4.1; Table 1
+fang2024rh20t,RH20T,real robot,"110K+ robot episodes; 110K human demonstrations; 147 tasks; 42 skills",visual; tactile; audio; proprioception; force,"7 robot configurations, 4 arm types",,contact-rich one-shot imitation,Sec. I; Sec. III; Table III
+bu2025agibotworld,AgiBot World,real robot,"1,001,552 trajectories; 2976.4 h; 217 tasks; 87 skills; 106 scenes",proprioception recorded with images,100 AgiBot robots,30,long-horizon dual-arm manipulation,Sec. 3
+hoque2026egodex,EgoDex,human egocentric video,"829 h; 90 million frames; 194 tasks",egocentric video with 3D hand and finger tracking,human hands (Apple Vision Pro capture),30,learning manipulation from human video,Abstract; Sec. 1
+nasiriany2024robocasalargescalesimulationeveryday,RoboCasa,simulated benchmark,"120 kitchen scenes; 2,509 objects; 1,250 human demonstrations plus 100K generated trajectories",,,,household tasks for generalist robots,Sec. I; Sec. III-B; Sec. III-C; Sec. IV-C
+chen2025robotwin2,RoboTwin 2.0,simulated benchmark,"50 dual-arm tasks; 731 objects; over 100,000 trajectories",,5 robot embodiments,,robust bimanual manipulation,Abstract; Sec. 3.2
+tao2025maniskill3,ManiSkill3,simulated benchmark (GPU-parallel),tasks in 12 domains; millions of demonstration frames,,,,fast RL and imitation learning,Abstract (arXiv:2410.00425)
+li2024behavior1k,BEHAVIOR-1K,simulated benchmark (OmniGibson),"1,000 activities; 50 scenes; 9,000+ objects",,,,everyday household activities,Abstract
