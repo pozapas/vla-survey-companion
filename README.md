@@ -131,7 +131,7 @@ A system enters the table only when its own paper states the backbone, the actio
 
 ## 📂 Data files
 
-All files are UTF-8 CSV. The `source_page` and `location` columns point to the section, table, figure, or page of the source paper, and the `key` columns match the reference keys in `refs_verified.csv`.
+All files are UTF-8 CSV. The `source_page` and `location` columns point to the section, table, figure, or page of the source paper, and the `key` columns hold the survey's citation keys. Most of these keys, though not all, have a matched publisher, proceedings, or arXiv record in `refs_verified.csv`.
 
 | File | Rows | Contents |
 | --- | ---: | --- |
@@ -148,7 +148,7 @@ All files are UTF-8 CSV. The `source_page` and `location` columns point to the s
 | [`claims.csv`](data/claims.csv) | 387 | Sentence-level claims in the survey text, each with a source excerpt, its location, and whether the source supports it |
 | [`claims_tables.csv`](data/claims_tables.csv) | 2,053 | One excerpt and location for each table cell and plotted value |
 
-Three rows of `claims.csv`, for `fan2024languagereasoningvla`, `jiang2024behavioractor`, and `zhao2025multimodal`, keep their keys and locations but leave the excerpt blank, because the full text of those papers is not openly available.
+Three rows of `claims.csv`, for `fan2024languagereasoningvla`, `jiang2024behavioractor`, and `zhao2025multimodal`, keep their keys and locations, but their excerpts are not redistributed here, because two were taken from library-licensed copies and one from a publisher abstract.
 
 ## 🔁 Rebuilding the table
 
