@@ -17,7 +17,7 @@
 
 Companion data for the survey &nbsp;<strong>Vision-Language-Action Models: Foundations, Architectures, Data, Efficiency, and Open Challenges</strong>&nbsp; (<em>under review</em>)
 
-**38 systems placed · 125 verified references · 1,161 benchmark results · 75 latency records · 2,053 table-cell excerpts**
+**38 systems placed · 8 surveys compared · 129 verified references · 1,161 benchmark results · 75 latency records · 2,061 table-cell excerpts**
 
 [🗺️ Axes](#️-four-axes-and-their-decision-rules) • [🤖 Systems](#-the-38-placed-systems) • [📂 Data](#-data-files) • [🔁 Rebuild](#-rebuilding-the-table) • [🤝 Contribute](CONTRIBUTING.md) • [📜 License](#-license)
 
@@ -40,15 +40,15 @@ Most VLA systems combine several design choices, so category names alone do not 
 | **Learning and adaptation** | How embodied skills are acquired, transferred, and refined | Which data enter which loss, taking the first class that applies |
 | **Deployment objective** | The operational constraint that shapes the other three choices | The constraint the paper optimizes for and evaluates against in its main experiments |
 
-**Action representation.** A planner that outputs subtask text is a language-as-action system even when a separate policy turns that text into joint commands. A model whose flow-matching head emits the action chunk directly, as in π<sub>0</sub>, is a continuous-trajectory system.
+**Action representation.** A planner that outputs subtask text is a language-as-action system even when a separate policy turns that text into joint commands. A model whose flow-matching head emits the action chunk directly, as in π<sub>0</sub>, is a continuous-trajectory system. Modules trained in the system's own paper count as part of the learned model, while a pre-existing policy that executes a plan, as in PaLM-E, is downstream. A system is latent-action when its backbone emits codes from a learned latent action space that a light decoder maps to commands, as in UniVLA and LeVERB, and continuous when its action module generates the commands from a plan or from features, as in ThinkAct.
 
-**Architectural paradigm.** The first test asks where the actions come from. A system whose actions come out of the language token stream is end-to-end (E2E), and a system whose actions come from a separate module with its own parameters and training objective is backbone plus action expert (B+E). The second test applies only to systems with two levels and asks whether the interface between them can be read by a person. A language, code, or subtask interface makes the system hierarchical (H), and a latent interface between modules that run at different rates makes it dual-system (DS). Reasoning and memory are overlays that can sit on any base class. A system is reasoning-augmented (+R) when it emits intermediate tokens before each action, and memory-augmented when it keeps state across inference calls beyond the context window. Being built on a foundation model is a property of where the backbone came from, not a class on this axis.
+**Architectural paradigm.** Two tests decide the class, and the interface test is applied first. It covers systems with two levels and asks whether the interface between them can be read by a person. A language, code, or subtask interface makes the system hierarchical (H), and a latent interface between modules that run at different rates makes it dual-system (DS). When one model writes text and then acts, the system is hierarchical if the text is a command that a person could replace, such as a subtask or a motion phrase, and reasoning-augmented if the text is a reasoning trace. The second test asks where the actions come from. A system whose actions come out of the language token stream is end-to-end (E2E), and a system whose actions come from a separate module with its own parameters and training objective is backbone plus action expert (B+E). Reasoning and memory are overlays that can sit on any base class. A system is reasoning-augmented (+R) when it emits intermediate tokens before each action, and memory-augmented when it keeps state across inference calls beyond the context window. Being built on a foundation model is a property of where the backbone came from, not a class on this axis.
 
-**Learning and adaptation.** The classes are checked in a fixed order and the first that applies is recorded. Training on action-free video or synthetic demonstrations comes first (VS), then co-training that adds non-robot data under the same objective (CT), then multi-robot corpora that precede adaptation to the target platform (XE), and last behavior cloning on target robot data alone (BC). Reward-guided refinement, which uses any signal beyond demonstrations, is recorded as an overlay (+RL).
+**Learning and adaptation.** The classes are checked in a fixed order and the first that applies is recorded. Training on action-free video or synthetic demonstrations comes first (VS), then co-training that adds non-robot data under the same objective (CT), then multi-robot corpora that precede adaptation to the target platform (XE), and last behavior cloning on target robot data alone (BC). Reward-guided refinement, which uses any signal beyond demonstrations, is recorded as an overlay (+RL). Synthetic demonstrations are those generated by a simulator script, a generative model, or retargeting, and generated text labels on recorded robot data do not count. Non-robot data count whether they are mixed into training or used in an earlier stage, and inherited weights count only when the paper starts from a robot-pretrained checkpoint.
 
 **Deployment objective.** The class is the constraint that the paper's experiments are built around, which is usually explicit. Latency and hardware are the constraint for TinyVLA and SmolVLA, unseen homes for π<sub>0.5</sub>, and whole-body humanoid control for LeVERB. When a paper evaluates several constraints, the class follows its main experiments.
 
-Under these rules each system maps to one position on each axis. The two Gemini Robotics reports cannot be placed, because they state that a cloud backbone and an on-robot decoder exist but not what passes between them.
+Under these rules each system maps to one position on each axis. The two Gemini Robotics reports cannot be placed, because neither describes the architecture of the on-robot action decoder or what passes between it and the cloud backbone.
 
 ## 🤖 The 38 placed systems
 
@@ -59,8 +59,9 @@ A system enters the table only when its own paper states the backbone, the actio
 
 - **Arch.** is the architectural class. E2E is end-to-end, B+E is backbone plus action expert, H is hierarchical, DS is dual-system, and +R marks the reasoning overlay. "Same model" marks a hierarchy in which one network produces both levels.
 - **Learn.** is the learning class, the first that applies in this order. VS is action-free video or synthetic demonstrations, CT is co-training with non-robot data, XE is multi-robot corpora before target adaptation, BC is robot data from the target setting alone, and +RL marks reward-guided refinement.
-- **Dep.** is the deployment class, the constraint the paper evaluates against. G is generalist transfer, E is efficient deployment, C is high-rate or dexterous control, L is long-horizon tasks and corrections, R is reasoning and interpretability, X is expanded embodiment, and V is driving.
+- **Dep.** is the deployment class, the constraint the paper evaluates against. G is generalist transfer or general-purpose design, E is efficient deployment, C is high-rate or dexterous control, L is long-horizon tasks and corrections, R is reasoning and interpretability, X is expanded embodiment, and V is driving.
 - **Open** is yes when the paper states that weights are released, code when only code is stated, prom. when a release is promised, and n.s. when the paper does not state a release.
+- **Decoder; passes per chunk** gives the number of forward passes per action chunk as each paper states it.
 
 </details>
 
@@ -83,7 +84,7 @@ A system enters the table only when its own paper states the backbone, the actio
 | [SpatialVLA](https://doi.org/10.15607/rss.2025.xxi.011) (2025) | PaliGemma 2 + Ego3D encoding; 3.5B | spatial tokens (adaptive grids, 8,194 vocabulary) | E2E | autoregressive spatial tokens; 12 tokens per 4-action chunk | 1.1M episodes, OXE subset + RH20T | XE | 3D-aware generalist | G | code |
 | [VLA-0](https://arxiv.org/abs/2510.13054) (2025) | Qwen-VL-2.5-3B, unmodified; 3B | actions as plain text integers | E2E | autoregressive text in the VLM vocabulary | LIBERO demos only; 100 demos per real task | BC | no change to the VLM | G | yes |
 
-#### Backbone plus action expert (B+E), 10 systems
+#### Backbone plus action expert (B+E), 9 systems
 
 | System (year) | Backbone; size | Action representation | Arch. | Decoder; passes per chunk | Training data | Learn. | Deployment objective | Dep. | Open |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -91,7 +92,6 @@ A system enters the table only when its own paper states the backbone, the actio
 | [DeeR-VLA](https://doi.org/10.52202/079017-1803) (2024) | OpenFlamingo 3B, multi-exit; 3B | continuous pose + discrete gripper | B+E | LSTM action head after a dynamic early exit; 1 (truncated LLM pass) | CALVIN language-annotated data | BC | lower compute and memory via early exit | E | yes |
 | [π<sub>0</sub>](https://doi.org/10.15607/rss.2025.xxi.010) (2024) | PaliGemma 3B + 300M action expert; 3.3B | continuous chunk | B+E | flow-matching action expert, 10 steps; 1 VLM pass + 10 expert passes | 10,000+ h robot data, 7 configurations, plus OXE | XE | dexterous multi-embodiment control | C | n.s. |
 | [TinyVLA](https://doi.org/10.1109/lra.2025.3544909) (2024) | Pythia-based VLM; 422M to 1.3B | continuous | B+E | diffusion policy head | no robot pretraining; 100 demos per task | BC | fast inference, data efficiency | E | n.s. |
-| [DexVLA](https://proceedings.mlr.press/v305/wen25b.html) (2025) | Qwen2-VL 2B + 1B diffusion expert; 2B VLM + 1B expert | continuous | B+E+R | diffusion transformer expert with reasoning injection | \~100 h own teleoperation, 91 tasks | XE | cross-embodiment dexterous and long-horizon tasks | C | n.s. |
 | [GR-3](https://arxiv.org/abs/2507.15493) (2025) | Qwen2.5-VL-3B-Instruct + flow-matching action DiT; 4B | continuous chunk | B+E | flow-matching action DiT reading the VLM KV cache | own robot teleoperation per task, web VL data, 450 VR human trajectories | CT | generalization to novel objects, environments, and instructions | G | n.s. |
 | [OpenVLA-OFT](https://doi.org/10.15607/rss.2025.xxi.017) (2025) | OpenVLA (Prismatic, Llama 2 7B); 7.5B; 279M trainable | continuous chunk | B+E | parallel decoding + MLP head, L1 regression; 1 | OpenVLA base; 500 demos per LIBERO suite | XE | fast high-rate fine-tuned control | C | yes |
 | [SmolVLA](https://arxiv.org/abs/2506.01844) (2025) | SmolVLM-2, first 16 layers; 450M (\~100M expert) | continuous chunk | B+E | flow-matching expert, 10 steps; 10 | 22.9k community episodes, 481 datasets | XE | affordable training and deployment | E | yes |
@@ -103,20 +103,21 @@ A system enters the table only when its own paper states the backbone, the actio
 | System (year) | Backbone; size | Action representation | Arch. | Decoder; passes per chunk | Training data | Learn. | Deployment objective | Dep. | Open |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [GR-2](https://arxiv.org/abs/2410.06158) (2024) | GPT-style transformer pretrained on video generation (no VLM); 230M (95M trainable) | continuous trajectory with future images | B+E (no LLM) | cVAE action head | 38M video clips; \~40,000 robot trajectories | VS | generalist manipulation; bin picking | G | n.s. |
-| [Octo](https://doi.org/10.15607/rss.2024.xx.090) (2024) | Transformer trained from scratch + t5-base encoder (no VLM); 27M / 93M | continuous chunk | B+E (no LLM) | diffusion head, 20 steps; 20 head steps after one backbone pass | 800k OXE trajectories (25 datasets) | XE | open generalist initialization | G | yes |
+| [Octo](https://doi.org/10.15607/rss.2024.xx.090) (2024) | Transformer trained from scratch + T5-base encoder (no VLM); 27M / 93M | continuous chunk | B+E (no LLM) | diffusion head, 20 steps; 20 head steps after one backbone pass | 800k OXE trajectories (25 datasets) | XE | open generalist initialization | G | yes |
 | [RDT-1B](https://openreview.net/forum?id=yAzN4tz7oI) (2024) | diffusion transformer + frozen SigLIP and T5-XXL encoders (no LLM); 1.2B | continuous chunk (128-dim unified space) | B+E (no LLM) | diffusion, 5 DPM-Solver++ steps; 5 | 46 datasets, 1M+ trajectories; 6K+ bimanual fine-tuning episodes | XE | bimanual manipulation foundation model | C | yes |
 | [X-VLA](https://openreview.net/forum?id=kt51kZH4aG) (2025) | Florence-Large encoder + soft-prompted transformer; 0.9B | continuous chunk | B+E (no LLM) | flow matching in the transformer | 290K episodes, seven platforms | XE | cross-embodiment with per-source soft prompts | X | n.s. |
 
-#### Hierarchical with a readable interface (H), 7 systems
+#### Hierarchical with a readable interface (H), 8 systems
 
 | System (year) | Backbone; size | Action representation | Arch. | Decoder; passes per chunk | Training data | Learn. | Deployment objective | Dep. | Open |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [PaLM-E](https://proceedings.mlr.press/v202/driess23a.html) (2023) | PaLM 540B + ViT-22B; 12B / 84B / 562B | language plans (executed by separate low-level policies) | H | autoregressive text; low-level policies RT-1 or Lynch et al. | web VL mixture with 8.9% embodied data | CT | embodied reasoning and planning | L | n.s. |
 | [RT-H](https://doi.org/10.15607/rss.2024.xx.049) (2024) | PaLI-X 55B; 55B | language motion then discrete tokens (256 bins) | H (same model) | two queries: language motion, then action; 2 queries per step | 100K demonstrations (Kitchen + Diverse) | CT | data sharing and language corrections | L | n.s. |
+| [DexVLA](https://proceedings.mlr.press/v305/wen25b.html) (2025) | Qwen2-VL 2B + 1B diffusion expert; 2B VLM + 1B expert | sub-step text, then continuous chunk | H (same model) | sub-step text injected by FiLM into a diffusion transformer expert | \~100 h own teleoperation, 91 tasks | XE | cross-embodiment dexterous and long-horizon tasks | X | n.s. |
 | [Hi Robot](https://proceedings.mlr.press/v267/shi25d.html) (2025) | PaliGemma-3B high level; pi0 low level; 3B per level | language commands, then continuous chunks | H | autoregressive commands; pi0 flow expert | teleoperated demos + VLM-generated synthetic prompts | BC | open-ended instructions and corrections | L | n.s. |
-| [LoHoVLA](https://arxiv.org/abs/2506.00411) (2025) | PaliGemma-3B; 3B | discrete tokens (1,024 bins) after subtask text | H (same model) | subtask text then action tokens, closed-loop replanning | LoHoSet (Ravens sim) | BC | long-horizon planning and acting | L | n.s. |
-| [OneTwoVLA](https://openreview.net/forum?id=tWMfhoP3as) (2025) | pi0 VLM (writes reasoning text) + pi0 flow-matching action expert | decision token, reasoning text when chosen, then continuous chunk | H+R (same model) | adaptive text reasoning; pi0 flow-matching action expert | 200 to 600 demos per task, 2,000 atomic-skill demos, 16,000 synthetic VL reasoning samples | CT | reasoning only at critical steps for long-horizon tasks, recovery, and interaction | L | n.s. |
-| [π\*<sub>0.6</sub>](https://arxiv.org/abs/2511.14759) (2025) | Gemma 3 4B + 860M flow-matching action expert; 4B + 860M | sub-task text, then continuous chunk (FAST tokens predicted in training) | H (same model) | sub-task text at a lower rate, then flow-matching action expert | multi-robot demonstrations and web VL data; then own rollouts and expert interventions | CT+RL | throughput and success on long real-world tasks | L | n.s. |
+| [LoHoVLA](https://arxiv.org/abs/2506.00411) (2025) | PaliGemma-3B; 3B | discrete tokens (1,024 bins) after subtask text | H (same model) | subtask text then action tokens, closed-loop replanning | LoHoSet, synthesized in the Ravens simulator | VS | long-horizon planning and acting | L | n.s. |
+| [OneTwoVLA](https://openreview.net/forum?id=tWMfhoP3as) (2025) | pi0 VLM (writes reasoning text) + pi0 flow-matching action expert | decision token, reasoning text when chosen, then continuous chunk | H+R (same model) | adaptive text reasoning; pi0 flow-matching action expert | 200 to 600 demos per task, 2,000 atomic-skill demos; a VL variant adds 16,000 synthetic VL reasoning samples | BC | reasoning only at critical steps for long-horizon tasks, recovery, and interaction | L | n.s. |
+| [π\*<sub>0.6</sub>](https://arxiv.org/abs/2511.14759) (2025) | Gemma 3 4B + 860M flow-matching action expert; 4B + 860M | subtask text, then continuous chunk (FAST tokens predicted in training) | H (same model) | subtask text at a lower rate, then flow-matching action expert | multi-robot demonstrations and web VL data; then own rollouts and expert interventions | CT+RL | throughput and success on long real-world tasks | L | n.s. |
 | [π<sub>0.5</sub>](https://proceedings.mlr.press/v305/black25a.html) (2025) | PaliGemma (2B) + 300M action expert; 2B + 300M | FAST tokens in pretraining; continuous chunk after post-training | H (same model) | subtask text, then 10 flow-matching steps | mobile-manipulator data from \~100 homes + other robots, web data, subtask labels | CT | open-world generalization to unseen homes | G | n.s. |
 
 #### Dual-system with a latent interface (DS), 4 systems
@@ -126,7 +127,7 @@ A system enters the table only when its own paper states the backbone, the actio
 | [HiRT](https://proceedings.mlr.press/v270/zhang25b.html) (2024) | InstructBLIP 7B + fast latent-conditioned policy; 7B + 35M or 150M | continuous (regression) | DS | fast policy conditioned on cached VLM latent; 1 | per-domain demos only | BC | higher control rate for dynamic tasks | C | n.s. |
 | [GR00T N1](https://arxiv.org/abs/2503.14734) (2025) | Eagle-2 VLM 1.34B + flow DiT; 2.2B | continuous chunk | DS | flow-matching DiT, 4 steps; 4 | data pyramid: real robots, human video with latent actions, simulation, neural trajectories | VS | generalist humanoid control | X | yes |
 | [LeVERB](https://arxiv.org/abs/2506.13751) (2025) | SigLIP encoders + CVAE transformer; RL whole-body controller | latent verbs decoded to joint targets | DS | RL-distilled whole-body controller | synthetic: retargeted human motion rendered in IsaacSim | VS | humanoid whole-body control, sim-to-real | X | n.s. |
-| [ThinkAct](https://doi.org/10.52202/085713-2773) (2025) | Qwen2.5-VL 7B + DiT action model; 7B + 432M | visual plan latent, then continuous actions | DS+R | diffusion policy, 20 DDIM steps; 20 | OXE trajectories and embodied QA for reasoning; OXE for actions | CT+RL | reasoning planner with fast executor | L | n.s. |
+| [ThinkAct](https://doi.org/10.52202/085713-2773) (2025) | Qwen2.5-VL 7B + DiT action model; 7B + 432M | visual plan latent, then continuous actions | DS+R | diffusion policy, 20 DDIM steps; 20 | OXE trajectories, human videos (Something-Something v2), and embodied QA for reasoning; OXE for actions | VS+RL | reasoning planner with fast executor | L | n.s. |
 <!-- END SYSTEMS TABLE -->
 
 ## 📂 Data files
@@ -141,12 +142,12 @@ All files are UTF-8 CSV. The `source_page` and `location` columns point to the s
 | [`calvin_chain.csv`](data/calvin_chain.csv) | 175 | CALVIN success at each of the five chained steps and the average chain length, by split |
 | [`latency.csv`](data/latency.csv) | 75 | Reported control rates and per-action latencies, each paired with its hardware and numeric precision |
 | [`longhorizon_pairs.csv`](data/longhorizon_pairs.csv) | 27 | Paired comparisons of a long-horizon mechanism against its ablated or base system, with both quotes |
-| [`datasets.csv`](data/datasets.csv) | 14 | Robot datasets with source, scale, modalities, embodiments, and control rate |
-| [`positioning_evidence.csv`](data/positioning_evidence.csv) | 80 | The coding of the closest earlier surveys on each comparison criterion, with the quote, its location, and the second coder's check |
+| [`datasets.csv`](data/datasets.csv) | 16 | Robot datasets and simulation benchmarks with source, scale, modalities, embodiments, and control rate |
+| [`positioning_evidence.csv`](data/positioning_evidence.csv) | 90 | The coding of this survey and the eight closest earlier surveys on ten comparison criteria, with the quote, its location, and the second coder's check |
 | [`search_log.csv`](data/search_log.csv) | 24 | Query strings, fields, filters, run dates, and record counts of the literature search |
-| [`refs_verified.csv`](data/refs_verified.csv) | 125 | Each cited reference matched against its publisher, proceedings, or arXiv record |
-| [`claims.csv`](data/claims.csv) | 387 | Sentence-level claims in the survey text, each with a source excerpt, its location, and whether the source supports it |
-| [`claims_tables.csv`](data/claims_tables.csv) | 2,053 | One excerpt and location for each table cell and plotted value |
+| [`refs_verified.csv`](data/refs_verified.csv) | 129 | Each cited reference matched against its publisher, proceedings, or arXiv record |
+| [`claims.csv`](data/claims.csv) | 390 | Sentence-level claims in the survey text, each with a source excerpt, its location, and whether the source supports it |
+| [`claims_tables.csv`](data/claims_tables.csv) | 2,061 | One excerpt and location for each table cell and plotted value |
 
 Three rows of `claims.csv`, for `fan2024languagereasoningvla`, `jiang2024behavioractor`, and `zhao2025multimodal`, keep their keys and locations, but their excerpts are not redistributed here, because two were taken from library-licensed copies and one from a publisher abstract.
 
