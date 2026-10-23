@@ -15,7 +15,7 @@
 
 <div align="center">
 
-Companion data for the survey &nbsp;<strong>Vision-Language-Action Models: Foundations, Architectures, Data, Efficiency, and Open Challenges</strong>&nbsp; (<em>under review</em>)
+Companion data for the survey &nbsp;<strong>Vision-Language-Action Models: A Survey of Foundations, Architectures, Data, Efficiency, and Open Challenges</strong>&nbsp; (<em>under review</em>)
 
 **38 systems placed · 8 surveys compared · 130 verified references · 1,161 benchmark results · 75 latency records · 2,063 table-cell excerpts**
 
