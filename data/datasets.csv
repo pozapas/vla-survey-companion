@@ -15,3 +15,4 @@ tao2025maniskill3,ManiSkill3,simulated benchmark (GPU-parallel),tasks in 12 doma
 li2024behavior1k,BEHAVIOR-1K,simulated benchmark (OmniGibson),"1,000 activities; 50 scenes; 5,000+ objects",,,,everyday household activities,Abstract (PMLR v205)
 james2020rlbench,RLBench,simulated benchmark,100 hand-designed tasks; demonstrations generated on demand,,,,multi-task 3D manipulation,Abstract; Sec. 1
 pumacay2024colosseum,The Colosseum,simulated benchmark,20 manipulation tasks; 14 perturbation axes,,,,generalization under perturbations,Abstract
+wu2025robomind,RoboMIND,real robot,107k trajectories; 479 tasks; 96 object classes; 5k failure demonstrations with causes,multi-view images; proprioception; language,"Franka Panda, UR5e, AgileX dual-arm, humanoid",,multi-embodiment imitation; failure reflection,Abstract

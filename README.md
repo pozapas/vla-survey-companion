@@ -17,7 +17,7 @@
 
 Companion data for the survey &nbsp;<strong>Vision-Language-Action Models: Foundations, Architectures, Data, Efficiency, and Open Challenges</strong>&nbsp; (<em>under review</em>)
 
-**38 systems placed · 8 surveys compared · 129 verified references · 1,161 benchmark results · 75 latency records · 2,061 table-cell excerpts**
+**38 systems placed · 8 surveys compared · 130 verified references · 1,161 benchmark results · 75 latency records · 2,063 table-cell excerpts**
 
 [🗺️ Axes](#️-four-axes-and-their-decision-rules) • [🤖 Systems](#-the-38-placed-systems) • [📂 Data](#-data-files) • [🔁 Rebuild](#-rebuilding-the-table) • [🤝 Contribute](CONTRIBUTING.md) • [📜 License](#-license)
 
@@ -142,12 +142,12 @@ All files are UTF-8 CSV. The `source_page` and `location` columns point to the s
 | [`calvin_chain.csv`](data/calvin_chain.csv) | 175 | CALVIN success at each of the five chained steps and the average chain length, by split |
 | [`latency.csv`](data/latency.csv) | 75 | Reported control rates and per-action latencies, each paired with its hardware and numeric precision |
 | [`longhorizon_pairs.csv`](data/longhorizon_pairs.csv) | 27 | Paired comparisons of a long-horizon mechanism against its ablated or base system, with both quotes |
-| [`datasets.csv`](data/datasets.csv) | 16 | Robot datasets and simulation benchmarks with source, scale, modalities, embodiments, and control rate |
+| [`datasets.csv`](data/datasets.csv) | 17 | Robot datasets and simulation benchmarks with source, scale, modalities, embodiments, and control rate |
 | [`positioning_evidence.csv`](data/positioning_evidence.csv) | 90 | The coding of this survey and the eight closest earlier surveys on ten comparison criteria, with the quote, its location, and the second coder's check |
 | [`search_log.csv`](data/search_log.csv) | 24 | Query strings, fields, filters, run dates, and record counts of the literature search |
-| [`refs_verified.csv`](data/refs_verified.csv) | 129 | Each cited reference matched against its publisher, proceedings, or arXiv record |
-| [`claims.csv`](data/claims.csv) | 390 | Sentence-level claims in the survey text, each with a source excerpt, its location, and whether the source supports it |
-| [`claims_tables.csv`](data/claims_tables.csv) | 2,061 | One excerpt and location for each table cell and plotted value |
+| [`refs_verified.csv`](data/refs_verified.csv) | 130 | Each cited reference matched against its publisher, proceedings, or arXiv record |
+| [`claims.csv`](data/claims.csv) | 397 | Sentence-level claims in the survey text, each with a source excerpt, its location, and whether the source supports it |
+| [`claims_tables.csv`](data/claims_tables.csv) | 2,063 | One excerpt and location for each table cell and plotted value |
 
 Three rows of `claims.csv`, for `fan2024languagereasoningvla`, `jiang2024behavioractor`, and `zhao2025multimodal`, keep their keys and locations, but their excerpts are not redistributed here, because two were taken from library-licensed copies and one from a publisher abstract.
 
